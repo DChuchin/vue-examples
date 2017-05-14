@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <header>
+      <button @click="show = !show">
+        <i class="ion-navicon"></i>
+      </button>
+    </header>
+
+    <transition name="slide">
+       <aside v-show="show">
+           <nav>
+              <router-link to="/brands">Бренды</router-link>
+              <router-link to="/projects">Проекты</router-link>
+              <router-link to="/contacts">Контакты</router-link>
+          </nav>
+       </aside>
+    </transition>
+
+    <router-view></router-view>
+
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

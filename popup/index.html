@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+</head>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .popup {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .popup > div {
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    background: #ffffff;
+    max-width: 70vw;
+  }
+  .close {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+  }
+</style>
+<body>
+  <div id="app">
+    <button @click="isVisible = true">show popup</button>
+    <div class="popup" v-show="isVisible">
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, provident sint ducimus dolor adipisci? Id eum, provident dignissimos unde sint non officia, doloribus tempore incidunt commodi aspernatur numquam ad, earum?
+        <button class="close" @click="isVisible = false">X</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:"#app",
+      data: {
+        isVisible: false,
+      },
+    })
+  </script>
+</body>
+</html>
